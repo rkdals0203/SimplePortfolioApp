@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Contact">
+
+        <menu>
+            <item
+                android:id="@+id/menu_phone"
+                android:title="Phone: +82 10-6725-0209"
+                android:icon="@drawable/ic_launcher_foreground"
+                />
+            <item
+                android:id="@+id/menu_email"
+                android:title="Email: rkdals0203@gmail.com"
+                android:icon="@drawable/ic_launcher_foreground"
+                />
+            <item
+                android:id="@+id/menu_github"
+                android:title="@string/github_username"
+                android:icon="@drawable/ic_launcher_foreground"
+                />
+        </menu>
+
+    </item>
+
+</menu>

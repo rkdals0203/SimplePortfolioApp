@@ -1,9 +1,15 @@
 <resources>
     <string name="app_name">MobileProgrammingPractice</string>
 
+
+
     <string name="spotify_head">Kangmin Kim</string>
 
     <string name="spotify_li">19202079</string>
 
     <string name="go_to">Go to</string>
+
+    <string name="github_username">Github: https://github.com/rkdals0203</string>
+
+    <string name="about_me">The first thing I should introduce is that I’m a unique and creative problem solver. Through our experience in the Google Solution Challenge, which involves solving 17 Sustainable Development Goals presented by the United Nations, I have proven that I have a creative and innovative approach to problems. This experience demonstrated the ability to solve problems through unconventional ideas and creative approaches by being selected as a top 100 finalist out of over 2,000 teams from around the world. Additionally, in the Fintech Business Model Competition, I demonstrated my ability to solve problems by developing creative solutions that go beyond traditional methods. Moreover, I have currently established a start-up team using tokenized securities and are attempting actual start-ups.</string>
 </resources>

@@ -2,9 +2,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mobileprogrammingpractice.Item
 import com.example.mobileprogrammingpractice.R
 import kotlinx.android.synthetic.main.card_item.view.textImg
-import com.example.mobileprogrammingpractice.Item
 import kotlinx.android.synthetic.main.card_item.view.cardImg
 
 class CardViewAdapter(val itemList: ArrayList<Item>): RecyclerView.Adapter<CardViewAdapter.ViewHolder>() {

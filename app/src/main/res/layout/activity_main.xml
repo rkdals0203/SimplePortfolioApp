@@ -1,57 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/drawer_layout"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/background">
+
+<!-- Main content -->
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/topleftlayout"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerHorizon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/toprightlayout"
-        >
+    <!-- App Bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_marginTop="50dp"
-            android:id="@+id/profileImage"
-            android:layout_width="200dp"
-            android:layout_height="300dp"
-            android:src="@drawable/kangmin" />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="      Resume of Kangmin Kim"
+            app:titleTextColor="#fff"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            />
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:contentDescription="@string/spotify_li"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:onClick="openDrawer"/> <!-- for click event -->
+
+    </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/topleftlayout"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerHorizon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/toprightlayout"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_marginTop="75dp"
+                android:id="@+id/profileImage"
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:src="@drawable/kangmin" />
+
+            <TextView
+                style="@style/details"
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Skilled at: Kotlin, Java, React, Python, Flutter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:id="@+id/toprightlayout"
+            android:layout_width="500dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerHorizon"
+            app:layout_constraintRight_toRightOf="@+id/topleftlayout"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+            <TextView
+                style="@style/sportify_head"
+                android:layout_marginTop="50dp"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kangmin Kim" />
+
+            <TextView
+                style="@style/body"
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="2019. 03 ~ 2023. 11" />
+
+            <TextView
+                style="@style/body"
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="SeoulTech IT Management" />
+
+            <TextView
+                style="@style/italic"
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Junior Product Manager" />
+
+            <TextView
+                style="@style/italic"
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Specialized in ESG" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/middleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@+id/topleftlayout"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerHorizon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
+            >
+           <TextView
+               style="@style/italic"
+               android:id="@+id/textView7"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:text="Experience: 8"
+               android:layout_marginLeft="20dp"/>
+            <TextView
+                style="@style/italic"
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Projects: 6"
+                android:layout_marginLeft="20dp"/>
+            <TextView
+                style="@style/italic"
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Prizes: 5"
+                android:layout_marginLeft="30dp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/toprightlayout"
-        android:layout_width="400dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerHorizon"
-        app:layout_constraintRight_toRightOf="@+id/topleftlayout"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-
-        <TextView
-            style="@style/sportify_head"
-            android:layout_marginTop="50dp"
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kangmin Kim" />
-
-        <TextView
-            style="@style/body"
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="SeoulTech ITM Junior" />
-    </LinearLayout>
-
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerHorizon"
         android:layout_width="match_parent"
@@ -61,4 +168,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
